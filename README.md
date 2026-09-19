@@ -40,7 +40,7 @@ npm run dev # rebuilds main.js on every change
 npm run build # type-checks and builds for production
 ```
 
-To release a new version, run `npm version patch` (or `minor` / `major`). It updates `manifest.json` and `versions.json` and creates the matching git tag.
+To release a new version, run `npm version patch` (or `minor` / `major`), then `git push --follow-tags`. The [release workflow](./.github/workflows/release.yml) builds the plugin and creates a draft GitHub release. See [CONTRIBUTING.md](./CONTRIBUTING.md) for more.
 
 ## Support
 
