@@ -15,7 +15,7 @@ A plugin for [Obsidian](https://obsidian.md) that lets you capture any node of a
 1. Open a Canvas.
 2. Right-click the node you want to capture.
 3. Select **Capture node screenshot** in the menu.
-4. Choose where to save the image. By default it is named `canvas-node-screenshot.png`.
+4. Choose where to save the image. By default it is named after the capture date and time, for example `canvas-node-screenshot-2026-09-19-143210.png`.
 
 ## Installation
 

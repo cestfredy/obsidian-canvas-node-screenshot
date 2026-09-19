@@ -1,3 +1,4 @@
+import { moment } from "obsidian";
 import { CanvasNode } from "./@types/types";
 import * as HtmlToImage from "html-to-image";
 
@@ -24,7 +25,7 @@ export default async function screenshotNodeElement (node: CanvasNode) {
             const downloadIt = (dataURL: string): void => {
                 
                 const downloaderLink = document.createElement("a");
-                downloaderLink.download = "canvas-node-screenshot.png";
+                downloaderLink.download = `canvas-node-screenshot-${moment().format("YYYY-MM-DD-HHmmss")}.png`;
                 downloaderLink.href = dataURL;
                 downloaderLink.click();
             }
