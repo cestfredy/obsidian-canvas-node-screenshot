@@ -8,9 +8,9 @@ import * as HtmlToImage from "html-to-image";
  */
 export default async function screenshotNodeElement (node: CanvasNode) {
 
-    const workspace: HTMLElement | null = document.querySelector("body");
+    const workspace: HTMLElement = activeDocument.body;
     const currentNodeElement: HTMLElement | null = node.nodeEl.querySelector(".canvas-node-container");
-    const canvasBackgroundColor: string = workspace?.classList.contains("theme-light") ? "#ffffff" : "#1e1e1e";
+    const canvasBackgroundColor: string = workspace.classList.contains("theme-light") ? "#ffffff" : "#1e1e1e";
 
     if (currentNodeElement) {
         
@@ -24,7 +24,7 @@ export default async function screenshotNodeElement (node: CanvasNode) {
              */
             const downloadIt = (dataURL: string): void => {
                 
-                const downloaderLink = document.createElement("a");
+                const downloaderLink = createEl("a");
                 downloaderLink.download = `canvas-node-screenshot-${moment().format("YYYY-MM-DD-HHmmss")}.png`;
                 downloaderLink.href = dataURL;
                 downloaderLink.click();
@@ -35,7 +35,7 @@ export default async function screenshotNodeElement (node: CanvasNode) {
 
             screenshot.onload = () => {
 
-                const canvas = document.createElement("canvas");
+                const canvas = createEl("canvas");
                 const context = canvas.getContext("2d");
 
                 const width = screenshot.width + 10;

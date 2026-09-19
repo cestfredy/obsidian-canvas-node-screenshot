@@ -37,7 +37,7 @@ export type Canvas = {
 	selection: Set<CanvasNode>;
 	edgeTo: Map<CanvasNode, Set<CanvasEdge>>;
 	edgeFrom: Map<CanvasNode, Set<CanvasEdge>>;
-	[key: string]: any;
+	[key: string]: unknown;
 };
 
 export type CanvasNode = {
@@ -51,7 +51,7 @@ export type CanvasNode = {
 	bbox: CanvasBBox;
 	nodeEl: HTMLDivElement;
 	canvas: Canvas;
-	[key: string]: any;
+	[key: string]: unknown;
 };
 
 export type CanvasEdge = {
@@ -62,7 +62,7 @@ export type CanvasEdge = {
 		from: { side: NodeSide; node: CanvasNode; end: NodeSide },
 		to: { side: NodeSide; node: CanvasNode; end: NodeSide }
 	) => void;
-	[key: string]: any;
+	[key: string]: unknown;
 };
 
 export type Size = { width: number; height: number };
@@ -77,43 +77,43 @@ export type CanvasBBox = {
 export type WorkspaceWithCanvas = {
 	on(
 		name: "canvas:creation-menu",
-		callback: (menu: Menu, canvas: Canvas, pos: Point, size?: Size) => any,
-		ctx?: any
+		callback: (menu: Menu, canvas: Canvas, pos: Point, size?: Size) => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:node:initialize",
-		callback: (node: CanvasNode) => any,
-		ctx?: any
+		callback: (node: CanvasNode) => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:node-menu",
-		callback: (menu: Menu, node: CanvasNode) => any,
-		ctx?: any
+		callback: (menu: Menu, node: CanvasNode) => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:node-connection-drop-menu",
-		callback: (menu: Menu, from: CanvasNode, edge: CanvasEdge) => any,
-		ctx?: any
+		callback: (menu: Menu, from: CanvasNode, edge: CanvasEdge) => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:edge-menu",
-		callback: (menu: Menu, edge: CanvasEdge) => any,
-		ctx?: any
+		callback: (menu: Menu, edge: CanvasEdge) => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:selection-menu",
-		callback: (menu: Menu, canvas: Canvas) => any,
-		ctx?: any
+		callback: (menu: Menu, canvas: Canvas) => unknown,
+		ctx?: unknown
 	): EventRef;
-	on(name: "canvas:menu:render", callback: () => any, ctx?: any): EventRef;
+	on(name: "canvas:menu:render", callback: () => unknown, ctx?: unknown): EventRef;
 	on(
 		name: "canvas:node-interaction-layer:render",
-		callback: () => any,
-		ctx?: any
+		callback: () => unknown,
+		ctx?: unknown
 	): EventRef;
 	on(
 		name: "canvas:node-interaction-layer:set-target",
-		callback: (node: CanvasNode) => any,
-		ctx?: any
+		callback: (node: CanvasNode) => unknown,
+		ctx?: unknown
 	): EventRef;
 } & Workspace;
