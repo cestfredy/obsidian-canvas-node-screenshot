@@ -1,31 +1,52 @@
-# Obsidian Canvas Node Screenshot
+# Node Screenshot
 
-A plugin for [Obsidian](https://obsidian.md) that allows you to take screenshots of nodes in the canvas.
+A plugin for [Obsidian](https://obsidian.md) that lets you capture any node of a Canvas as a PNG image.
 
 ![Canvas-Node-Screenshot](./assets/Canvas-Node-Screenshot.gif)
 
 ## Features
 
-- Take screenshots of nodes in the canvas.
-- Easy-to-use plugin.
+- Capture a single Canvas node as a PNG image, straight from its context menu.
+- The background of the image matches your theme (light or dark).
+- No settings to configure: install it and it works.
 
 ## Usage
 
-1. Click on the screenshot icon in the canvas menu.
-2. Save or specify the location to store the captured screenshot.
-3. Click "Save" to store the screenshot.
+1. Open a Canvas.
+2. Right-click the node you want to capture.
+3. Select **Capture node screenshot** in the menu.
+4. Choose where to save the image. By default it is named `canvas-node-screenshot.png`.
 
 ## Installation
 
-- Not ready for market yet.
-- Can be installed via the [Brat](https://github.com/TfTHacker/obsidian42-brat) plugin.
-- Manual installation:
+### From Obsidian (recommended)
 
-    1. Find the release page on this GitHub page and click.
-    2. Download the latest release zip file.
-    3. Unzip it, copy the unzipped folder to the Obsidian plugin folder (ensure it contains `main.js` and `manifest.json`).
-    4. Restart Obsidian (or refresh the plugin list) and enable the plugin in the settings interface.
+1. Open **Settings → Community plugins**.
+2. If needed, turn off **Restricted mode**.
+3. Click **Browse** and search for **Node Screenshot**.
+4. Click **Install**, then **Enable**.
+
+### Manual installation
+
+1. Go to the [Releases](https://github.com/cestfredy/obsidian-canvas-node-screenshot/releases) page and download `main.js` and `manifest.json` from the latest release.
+2. In your vault, create the folder `.obsidian/plugins/canvas-node-screenshot/` and copy both files into it.
+3. Restart Obsidian (or reload the plugin list), then enable **Node Screenshot** in **Settings → Community plugins**.
+
+## Development
+
+```bash
+npm install
+npm run dev # rebuilds main.js on every change
+npm run build # type-checks and builds for production
+```
+
+To release a new version, run `npm version patch` (or `minor` / `major`). It updates `manifest.json` and `versions.json` and creates the matching git tag.
 
 ## Support
 
-If you find this plugin helpful and want to support my work, you can just **Star ⭐** this repository.
+- Found a bug or have an idea? [Open an issue](https://github.com/cestfredy/obsidian-canvas-node-screenshot/issues).
+- If you find this plugin helpful, you can **Star ⭐** this repository.
+
+## License
+
+[MIT](./LICENSE)
