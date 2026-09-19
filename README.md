@@ -2,7 +2,7 @@
 
 A plugin for [Obsidian](https://obsidian.md) that lets you capture any node of a Canvas as a PNG image.
 
-![Canvas-Node-Screenshot](./assets/Canvas-Node-Screenshot.gif)
+![Canvas-Node-Screenshot](./assets/Node-Screenshot.gif)
 
 ## Features
 
