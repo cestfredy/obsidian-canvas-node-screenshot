@@ -1,7 +1,7 @@
 {
 	"id": "canvas-node-screenshot",
 	"name": "Node Screenshot",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Capture node effortlessly with precision screenshot.",
 	"author": "Fredy",

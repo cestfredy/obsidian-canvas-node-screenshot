@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-canvas-node-screenshots-plugin",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Capture node effortlessly with precision screenshot.",
 	"main": "main.js",
 	"scripts": {
