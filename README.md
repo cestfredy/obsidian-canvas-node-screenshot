@@ -7,15 +7,19 @@ A plugin for [Obsidian](https://obsidian.md) that lets you capture any node of a
 ## Features
 
 - Capture a single Canvas node as a PNG image, straight from its context menu.
-- The background of the image matches your theme (light or dark).
+- Capture several nodes at once, with the edges between them, from the selection menu.
+- Capture a group with all the nodes it contains.
+- The background of the image matches your theme.
 - No settings to configure: install it and it works.
 
 ## Usage
 
 1. Open a Canvas.
-2. Right-click the node you want to capture.
-3. Select **Capture node screenshot** in the menu.
-4. Choose where to save the image. By default it is named after the capture date and time, for example `canvas-node-screenshot-2026-09-19-143210.png`.
+2. Right-click what you want to capture:
+    - a node, then select **Capture node screenshot**;
+    - a group, then select **Capture group screenshot**;
+    - a selection of several nodes, then select **Capture selection screenshot**.
+3. Choose where to save the image. By default it is named after the capture date and time, for example `canvas-node-screenshot-2026-09-19-143210.png`.
 
 ## Installation
 

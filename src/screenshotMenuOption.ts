@@ -1,23 +1,43 @@
 import { Menu } from "obsidian";
-import { CanvasNode } from "./@types/types";
-import screenshotNodeElement from "./canvasNodeScreenshot";
+import { Canvas, CanvasNode } from "./@types/types";
+import screenshotNodes, { isGroupNode } from "./canvasNodeScreenshot";
 
 /**
- * Add "Capture node screenshot" option on the current node menu.
+ * Add the screenshot option on the menu of a node.
  * @param {Menu} menu - Where we will add option.
  * @param {CanvasNode} node - Current node.
  */
-export default async function onScreenshotOption (menu: Menu, node: CanvasNode) {
+export function onNodeScreenshotOption (menu: Menu, node: CanvasNode): void {
 
     menu.addSeparator();
 
-    menu.addItem((targetNode) => {
-        targetNode
-            .setTitle("Capture node screenshot")
+    menu.addItem((item) => {
+        item
+            .setTitle(isGroupNode(node) ? "Capture group screenshot" : "Capture node screenshot")
             .setIcon("scissors-square-dashed-bottom")
-            .onClick( async () => {
-               await screenshotNodeElement(node);
+            .onClick(async () => {
+                await screenshotNodes([node]);
             });
     });
+}
 
+/**
+ * Add the screenshot option on the menu of a selection of nodes.
+ * @param {Menu} menu - Where we will add option.
+ * @param {Canvas} canvas - Canvas holding the selection.
+ */
+export function onSelectionScreenshotOption (menu: Menu, canvas: Canvas): void {
+
+    if (canvas.selection.size === 0) return;
+
+    menu.addSeparator();
+
+    menu.addItem((item) => {
+        item
+            .setTitle("Capture selection screenshot")
+            .setIcon("scissors-square-dashed-bottom")
+            .onClick(async () => {
+                await screenshotNodes(Array.from(canvas.selection));
+            });
+    });
 }

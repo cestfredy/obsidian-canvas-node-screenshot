@@ -62,6 +62,8 @@ export type CanvasEdge = {
 		from: { side: NodeSide; node: CanvasNode; end: NodeSide },
 		to: { side: NodeSide; node: CanvasNode; end: NodeSide }
 	) => void;
+	lineGroupEl?: SVGElement;
+	lineEndGroupEl?: SVGElement;
 	[key: string]: unknown;
 };
 
